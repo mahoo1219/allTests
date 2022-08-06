@@ -40,15 +40,36 @@
 
 package cn;
 
+import org.junit.Assert;
+import org.junit.Test;
+
 public class ContainerWithMostWater_11 {
     public static void main(String[] args) {
         Solution solution = new ContainerWithMostWater_11().new Solution();
     }
 
+    @Test
+    public void runTest() {
+        Solution solution = new ContainerWithMostWater_11().new Solution();
+        Assert.assertEquals(solution.maxArea(RunTools.stringToIntegerArray("[1,8,6,2,5,4,8,3,7]")), 49);
+        Assert.assertEquals(solution.maxArea(RunTools.stringToIntegerArray("[1,1]")), 1);
+    }
+
     //leetcode submit region begin(Prohibit modification and deletion)
     class Solution {
         public int maxArea(int[] height) {
-            return 0;
+            int left = 0, right = height.length - 1;
+            int ans = 0;
+            while (left < right) {
+                int high = Math.min(height[left], height[right]);
+                ans = Math.max(ans, high * (right - left));
+                if (height[left] > height[right]) {
+                    right--;
+                } else {
+                    left++;
+                }
+            }
+            return ans;
         }
     }
 //leetcode submit region end(Prohibit modification and deletion)
