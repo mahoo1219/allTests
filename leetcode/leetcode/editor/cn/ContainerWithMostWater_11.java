@@ -51,8 +51,8 @@ public class ContainerWithMostWater_11 {
     @Test
     public void runTest() {
         Solution solution = new ContainerWithMostWater_11().new Solution();
-        Assert.assertEquals(solution.maxArea(RunTools.stringToIntegerArray("[1,8,6,2,5,4,8,3,7]")), 49);
-        Assert.assertEquals(solution.maxArea(RunTools.stringToIntegerArray("[1,1]")), 1);
+        Assert.assertEquals(49, solution.maxArea(RunTools.stringToIntegerArray("[1,8,6,2,5,4,8,3,7]")));
+        Assert.assertEquals(1, solution.maxArea(RunTools.stringToIntegerArray("[1,1]")));
     }
 
     //leetcode submit region begin(Prohibit modification and deletion)

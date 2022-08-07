@@ -10,3 +10,4 @@
 *.md
 /*.iml
 /.idea
+*.class
