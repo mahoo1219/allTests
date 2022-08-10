@@ -50,14 +50,12 @@
 package cn;
 
 import cn.tools.ListNode;
-import org.junit.Assert;
 import org.junit.Test;
 
 public class MergeKSortedLists_23 {
     @Test
     public void runTest() {
         Solution solution = new MergeKSortedLists_23().new Solution();
-        Assert.assertEquals();
     }
     //leetcode submit region begin(Prohibit modification and deletion)
 

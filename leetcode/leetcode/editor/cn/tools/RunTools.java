@@ -46,4 +46,31 @@ public class RunTools {
         sb.setCharAt(sb.length() - 1, ']');
         return sb.toString();
     }
+
+    public static ListNode stringToListNode(String input) {
+        // Generate array from the input
+        int[] nodeValues = stringToIntegerArray(input);
+
+        // Now convert that list into linked list
+        ListNode dummyRoot = new ListNode(0);
+        ListNode ptr = dummyRoot;
+        for(int item : nodeValues) {
+            ptr.next = new ListNode(item);
+            ptr = ptr.next;
+        }
+        return dummyRoot.next;
+    }
+
+    public static void prettyPrintLinkedList(ListNode node) {
+        while (node != null && node.next != null) {
+            System.out.print(node.val + "->");
+            node = node.next;
+        }
+
+        if (node != null) {
+            System.out.println(node.val);
+        } else {
+            System.out.println("Empty LinkedList");
+        }
+    }
 }
