@@ -240,9 +240,9 @@ public class RunTools {
         StringBuilder result = new StringBuilder();
         for (int index = 0; index < length; index++) {
             Integer number = nums.get(index);
-            result.append(number).append(", ");
+            result.append(number).append(",");
         }
-        return "[" + result.substring(0, result.length() - 2) + "]";
+        return "[" + result.substring(0, result.length() - 1) + "]";
     }
 
     public static String integerArrayListToString(List<Integer> nums) {
