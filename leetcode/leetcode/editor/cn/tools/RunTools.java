@@ -10,6 +10,10 @@ public class RunTools {
      */
     public static final int mod = 1000000007;
 
+    public static String format(String msg) {
+        return msg.replaceAll(",(\\d)", ", $1");
+    }
+
     public void printIndent(int n) {
         for (int i = 0; i < n; i++) {
             System.out.print("  ");
@@ -240,9 +244,9 @@ public class RunTools {
         StringBuilder result = new StringBuilder();
         for (int index = 0; index < length; index++) {
             Integer number = nums.get(index);
-            result.append(number).append(",");
+            result.append(number).append(", ");
         }
-        return "[" + result.substring(0, result.length() - 1) + "]";
+        return "[" + result.substring(0, result.length() - 2) + "]";
     }
 
     public static String integerArrayListToString(List<Integer> nums) {
@@ -256,6 +260,9 @@ public class RunTools {
             sb.append(",");
         }
 
+        if (sb.length() == 1) {
+            return sb.append(']').toString();
+        }
         sb.setCharAt(sb.length() - 1, ']');
         return sb.toString();
     }
